@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:23 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 13:07:14 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 13:59:17 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ typedef struct s_nb
 {
 	int			value;
 	int			to_top;
+	int			to_top_t;
+	int			index;
+	int			index_link;
 	struct s_nb	*next;
 } t_nb;
 
@@ -47,6 +50,8 @@ void	rotate(t_nb **lst, char *str);
 void	r_rotate(t_nb **lst, char *str);
 /*do_not_push.c*/
 void print_stack(t_nb **lst);
-
+/*spec_list.c*/
+void	index_list(t_nb **lst);
+void	index_link_list(t_nb **lst_a, t_nb **lst_b);
 
 #endif

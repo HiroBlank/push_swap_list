@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 12:00:31 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 14:27:16 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ int		push_swap(int size, char **tab)
 	lst_b = NULL;
 	if (!take_input(&lst_a, tab, size))
 		return (0);
+	push(&lst_a, &lst_b, "pb\n");
+	push(&lst_a, &lst_b, "pb\n");
+	push(&lst_a, &lst_b, "pb\n");
+	index_list(&lst_a);
+	index_list(&lst_b);
+	index_link_list(&lst_a, &lst_b);
 	print_stack(&lst_a);//
 	print_stack(&lst_b);//
 	del_list(&lst_a);

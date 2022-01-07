@@ -8,7 +8,11 @@ void print_stack(t_nb **lst)
 	tmp = *lst;
 	while (tmp)
 	{
-		printf("%d\n", tmp->value);
+		printf("value : 	 %d\n", tmp->value);
+		printf("index :		 %d\n", tmp->index);
+		printf("index link:	 %d\n", tmp->index_link);
+		printf("---------------\n");
 		tmp = tmp->next;
 	}
+	printf("============\n");
 }
