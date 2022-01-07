@@ -6,11 +6,11 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:13:49 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/06 15:56:20 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/06 18:33:04 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incldue.h"
+#include "include.h"
 
 t_nb	*new_node(int content)
 {
@@ -54,4 +54,21 @@ int		del_list(t_nb **lst)
 		}
 	}
 	return (0);
+}
+
+int	lst_size(t_nb **lst)
+{
+	t_nb	*tmp;
+	int		i;
+
+	tmp = *lst;
+	i = 1;
+	if (!*lst)
+		return (0);
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }
