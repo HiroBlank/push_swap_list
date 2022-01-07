@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 13:14:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 14:50:12 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 15:46:04 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	index_list(t_nb **lst)
 	}
 }
 
-#include <libc.h>
 t_nb	*index_link_init(t_nb **lst_a, int value)
 {
 	t_nb	*tmp_a;
@@ -70,6 +69,43 @@ void	index_link_list(t_nb **lst_a, t_nb **lst_b)
 			}
 			tmp_b->index_link = save->index;
 		}
+		tmp_b = tmp_b->next;
+	}
+}
+
+void	move_list(t_nb **lst)
+{
+	t_nb	*tmp;
+	int		size;
+
+	tmp = *lst;
+	size = lst_size(lst);
+	while (tmp)
+	{
+		if (tmp->index >= size / 2)//rotate
+			tmp->to_top = size - tmp->index - 1;
+		else
+			tmp->to_top = tmp->index + 1;
+		tmp = tmp->next;
+	}
+}
+
+void	move_list_t(t_nb **lst_a, t_nb **lst_b)
+{
+	t_nb	*tmp_a;
+	t_nb	*tmp_b;
+	int		size_a;
+
+	
+	tmp_b = *lst_b;
+	int		size;
+	size_a = lst_size(lst_a);
+	while (tmp_a && tmp_b)
+	{
+		tmp_a = *lst_a;
+		while (tmp_b->index_link != tmp_a->index)
+			tmp_a = tmp_a->next;
+		tmp_b->to_top_t = tmp_b->to_top + tmp_a->to_top + 1;
 		tmp_b = tmp_b->next;
 	}
 }

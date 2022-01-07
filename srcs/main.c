@@ -6,12 +6,24 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 14:27:16 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 15:47:20 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
-#include <libc.h>
+	/*
+	push(&lst_a, &lst_b, "pb\n");
+	push(&lst_a, &lst_b, "pb\n");
+	push(&lst_a, &lst_b, "pb\n");
+	index_list(&lst_a);
+	index_list(&lst_b);
+	move_list(&lst_a);
+	move_list(&lst_b);
+	move_list_t(&lst_a, &lst_b);
+	index_link_list(&lst_a, &lst_b);
+	print_stack(&lst_a);//
+	print_stack(&lst_b);//
+	*/
 
 int		push_swap(int size, char **tab)
 {
@@ -22,14 +34,6 @@ int		push_swap(int size, char **tab)
 	lst_b = NULL;
 	if (!take_input(&lst_a, tab, size))
 		return (0);
-	push(&lst_a, &lst_b, "pb\n");
-	push(&lst_a, &lst_b, "pb\n");
-	push(&lst_a, &lst_b, "pb\n");
-	index_list(&lst_a);
-	index_list(&lst_b);
-	index_link_list(&lst_a, &lst_b);
-	print_stack(&lst_a);//
-	print_stack(&lst_b);//
 	del_list(&lst_a);
 	del_list(&lst_b);
 	return (1);

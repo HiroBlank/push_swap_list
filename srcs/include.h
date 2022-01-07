@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:23 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 13:59:17 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 15:25:53 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ void print_stack(t_nb **lst);
 /*spec_list.c*/
 void	index_list(t_nb **lst);
 void	index_link_list(t_nb **lst_a, t_nb **lst_b);
+void	move_list(t_nb **lst);
+void	move_list_t(t_nb **lst_a, t_nb **lst_b);
+
 
 #endif
