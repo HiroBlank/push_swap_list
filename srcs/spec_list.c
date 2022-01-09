@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 13:14:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 21:25:10 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:47:08 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	move_list_t(t_nb **lst_a, t_nb **lst_b)
 	t_nb	*tmp_b;
 	int		size_a;
 
+	tmp_a = *lst_a;
 	tmp_b = *lst_b;
 	size_a = lst_size(lst_a);
 	while (tmp_a && tmp_b)
