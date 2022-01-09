@@ -6,12 +6,15 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:23 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 15:25:53 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 17:03:25 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INCLDUE_H
 # define INCLDUE_H
+
+# define ROT 42
+# define RROT 43
 
 # include <stdlib.h>
 # include "../libft/libft.h"
@@ -23,6 +26,7 @@ typedef struct s_nb
 	int			to_top_t;
 	int			index;
 	int			index_link;
+	int			rot;
 	struct s_nb	*next;
 } t_nb;
 
@@ -43,6 +47,7 @@ int		ft_error(int rtn);
 char	**ft_parse(char **av);
 void	free_tab(char **tab);
 int		ft_count(char **tab);
+void	all_specs(t_nb **lst_a, t_nb **lst_b);
 /*move.c*/
 void	swap(t_nb **lst, char *str);
 void	push(t_nb **lst1, t_nb **lst2, char *str);
@@ -55,6 +60,12 @@ void	index_list(t_nb **lst);
 void	index_link_list(t_nb **lst_a, t_nb **lst_b);
 void	move_list(t_nb **lst);
 void	move_list_t(t_nb **lst_a, t_nb **lst_b);
-
+/*algo.c*/
+int		ft_max(t_nb **lst);
+void	algo(t_nb **lst_a, t_nb **lst_b);
+/*utils_algo.c*/
+t_nb	*ft_min_t(t_nb **lst);
+t_nb	*node_of_index(t_nb **lst, int idx);
+t_nb	*ft_min_value(t_nb **lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 13:14:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 15:46:04 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 16:30:44 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,15 @@ void	move_list(t_nb **lst)
 	while (tmp)
 	{
 		if (tmp->index >= size / 2)//rotate
+		{
 			tmp->to_top = size - tmp->index - 1;
+			tmp->rot = ROT;	
+		}
 		else
+		{
 			tmp->to_top = tmp->index + 1;
+			tmp->rot = RROT;
+		}
 		tmp = tmp->next;
 	}
 }

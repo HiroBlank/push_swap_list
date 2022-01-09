@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:09:44 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 11:51:18 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/07 16:15:42 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,14 @@ int		ft_count(char **tab)
 	while (tab[i])
 		i++;
 	return (i);
+}
+
+void	all_specs(t_nb **lst_a, t_nb **lst_b)
+{
+	index_list(lst_a);
+	index_list(lst_b);
+	index_link_list(lst_a, lst_b);
+	move_list(lst_a);
+	move_list(lst_b);
+	move_list_t(lst_a, lst_b);
 }
