@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:13:49 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 16:08:21 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:35:09 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ t_nb	*new_node(int content)
 
 void	add_node_back(t_nb **first, int content)
 {
-	t_nb *tmp;
-	
+	t_nb	*tmp;
+
 	if (!*first)
 		*first = new_node(content);
 	else
@@ -40,10 +40,10 @@ void	add_node_back(t_nb **first, int content)
 	}
 }
 
-int		del_list(t_nb **lst)
+int	del_list(t_nb **lst)
 {
-	t_nb *tmp;
-	
+	t_nb	*tmp;
+
 	if (lst)
 	{
 		while (*lst)
@@ -72,5 +72,3 @@ int	lst_size(t_nb **lst)
 	}
 	return (i);
 }
-
-

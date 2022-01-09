@@ -6,17 +6,17 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 19:27:24 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:28:34 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int		push_swap(int size, char **tab)
+int	push_swap(int size, char **tab)
 {
 	t_nb	*lst_a;
 	t_nb	*lst_b;
-	
+
 	lst_a = NULL;
 	lst_b = NULL;
 	if (!take_input(&lst_a, tab, size))
@@ -29,10 +29,10 @@ int		push_swap(int size, char **tab)
 	return (1);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	char	**tab;
-	
+
 	if (ac == 2)
 	{
 		tab = ft_parse(av + 1);

@@ -6,12 +6,12 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:23 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 17:03:25 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:31:09 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLDUE_H
-# define INCLDUE_H
+#ifndef INCLUDE_H
+# define INCLUDE_H
 
 # define ROT 42
 # define RROT 43
@@ -28,8 +28,7 @@ typedef struct s_nb
 	int			index_link;
 	int			rot;
 	struct s_nb	*next;
-} t_nb;
-
+}	t_nb;
 
 /*main.c*/
 int		push_swap(int size, char **tab);

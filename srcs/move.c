@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:05:25 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 16:17:00 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:34:03 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ void	push(t_nb **lst1, t_nb **lst2, char *str)
 {
 	t_nb	*save;
 	t_nb	*tmp;
-	
+
 	save = *lst1;
 	tmp = *lst2;
-	
 	*lst1 = (*lst1)->next;
 	save->next = tmp;
 	*lst2 = save;
@@ -46,8 +45,8 @@ void	push(t_nb **lst1, t_nb **lst2, char *str)
 
 void	rotate(t_nb **lst, char *str)
 {
-	t_nb *tmp;
-	t_nb *save;
+	t_nb	*tmp;
+	t_nb	*save;
 
 	tmp = *lst;
 	save = *lst;
@@ -62,8 +61,8 @@ void	rotate(t_nb **lst, char *str)
 
 void	r_rotate(t_nb **lst, char *str)
 {
-	t_nb *tmp;
-	t_nb *save;
+	t_nb	*tmp;
+	t_nb	*save;
 
 	tmp = *lst;
 	while (tmp->next->next)

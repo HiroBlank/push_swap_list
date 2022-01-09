@@ -6,13 +6,13 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:09:08 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 16:14:50 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:28:04 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int		ft_check(char *str)
+int	ft_check(char *str)
 {
 	if (!str)
 		return (0);
@@ -27,7 +27,7 @@ int		ft_check(char *str)
 	return (1);
 }
 
-int		check_double(t_nb **lst, int size)
+int	check_double(t_nb **lst, int size)
 {
 	t_nb	*tmp1;
 	t_nb	*tmp2;
@@ -44,14 +44,14 @@ int		check_double(t_nb **lst, int size)
 				i++;
 			tmp2 = tmp2->next;
 		}
-		tmp1 = tmp1->next;	
+		tmp1 = tmp1->next;
 	}
 	if (i > size)
 		return (1);
 	return (0);
 }
 
-int		take_input(t_nb **lst, char **tab, int size)
+int	take_input(t_nb **lst, char **tab, int size)
 {
 	t_nb	*tmp;
 	int		content;

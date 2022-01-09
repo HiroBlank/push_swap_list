@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 13:14:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 19:26:48 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:25:10 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_nb	*index_link_init(t_nb **lst_a, int value)
 
 	save = NULL;
 	tmp_a = *lst_a;
-	
 	while (tmp_a && !save)
 	{
 		if (tmp_a->value > value)
@@ -43,7 +42,7 @@ t_nb	*index_link_init(t_nb **lst_a, int value)
 	}
 	if (!save)
 		return (NULL);
-	return (save);	
+	return (save);
 }
 
 void	index_link_list(t_nb **lst_a, t_nb **lst_b)
@@ -82,10 +81,10 @@ void	move_list(t_nb **lst)
 	size = lst_size(lst);
 	while (tmp)
 	{
-		if (tmp->index >= size / 2)//rotate
+		if (tmp->index >= size / 2)
 		{
 			tmp->to_top = size - tmp->index - 1;
-			tmp->rot = ROT;	
+			tmp->rot = ROT;
 		}
 		else
 		{
@@ -102,9 +101,7 @@ void	move_list_t(t_nb **lst_a, t_nb **lst_b)
 	t_nb	*tmp_b;
 	int		size_a;
 
-	
 	tmp_b = *lst_b;
-	int		size;
 	size_a = lst_size(lst_a);
 	while (tmp_a && tmp_b)
 	{

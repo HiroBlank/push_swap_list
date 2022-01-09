@@ -6,13 +6,13 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:09:44 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 16:15:42 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:31:53 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int		ft_error(int rtn)
+int	ft_error(int rtn)
 {
 	ft_putstr_fd("Error\n", 2);
 	return (rtn);
@@ -21,7 +21,7 @@ int		ft_error(int rtn)
 char	**ft_parse(char **av)
 {
 	char	**tab;
-	
+
 	tab = ft_split(*av, ' ');
 	if (!tab || ft_count(tab) < 1)
 	{
@@ -33,10 +33,10 @@ char	**ft_parse(char **av)
 
 void	free_tab(char **tab)
 {
-	if (!tab)
-		return ;
 	int	i;
 
+	if (!tab)
+		return ;
 	i = 0;
 	while (tab[i])
 	{
@@ -46,7 +46,7 @@ void	free_tab(char **tab)
 	free(tab);
 }
 
-int		ft_count(char **tab)
+int	ft_count(char **tab)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:48:22 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 19:27:06 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 21:27:23 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int		ft_max(t_nb **lst)
+int	ft_max(t_nb **lst)
 {
 	t_nb	*tmp;
 	int		max;
@@ -29,7 +29,7 @@ int		ft_max(t_nb **lst)
 	return (max);
 }
 
-void push_all(t_nb **lst_a, t_nb **lst_b)
+void	push_all(t_nb **lst_a, t_nb **lst_b)
 {
 	t_nb	*tmp_a;
 	int		max;
@@ -66,7 +66,7 @@ int	to_top_b(t_nb **lst)
 void	to_top_a(t_nb **lst, int idx)
 {
 	t_nb	*tmp;
-	
+
 	tmp = *lst;
 	while (tmp->index != idx)
 		tmp = tmp->next;
@@ -80,13 +80,12 @@ void	to_top_a(t_nb **lst, int idx)
 	}
 }
 
-void algo(t_nb **lst_a, t_nb **lst_b)
+void	algo(t_nb **lst_a, t_nb **lst_b)
 {
 	t_nb	*min;
+
 	push_all(lst_a, lst_b);
 	all_specs(lst_a, lst_b);
-	// print_stack(lst_a);
-	// print_stack(lst_b);
 	while (lst_size(lst_b))
 	{
 		all_specs(lst_a, lst_b);
