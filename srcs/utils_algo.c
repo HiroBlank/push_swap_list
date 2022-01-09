@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:40:39 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 17:21:12 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 18:28:25 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_nb	*ft_min_t(t_nb **lst)
 	tmp = tmp->next;
 	while (tmp)
 	{
-		if (tmp->to_top_t > save->to_top_t)
+		if (tmp->to_top_t < save->to_top_t)
 			save = tmp;
 		tmp = tmp->next;
 	}

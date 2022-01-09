@@ -6,12 +6,11 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:48:22 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 17:02:58 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 19:27:06 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
-#include <libc.h>
 
 int		ft_max(t_nb **lst)
 {
@@ -52,10 +51,8 @@ int	to_top_b(t_nb **lst)
 	t_nb	*tmp;
 
 	tmp = ft_min_t(lst);
-	index_list(lst);//dans algo ?
-	printf("index %d\n", tmp->index);
-	printf("index link %d\n", tmp->index_link);
-	while (tmp->index != 0)
+	index_list(lst);
+	while ((*lst)->index != tmp->index)
 	{
 		if (tmp->rot == ROT)
 			rotate(lst, "rb\n");
@@ -73,7 +70,7 @@ void	to_top_a(t_nb **lst, int idx)
 	tmp = *lst;
 	while (tmp->index != idx)
 		tmp = tmp->next;
-	while (tmp->index != 0)
+	while ((*lst)->index != tmp->index)
 	{
 		if (tmp->rot == ROT)
 			rotate(lst, "ra\n");
@@ -85,6 +82,7 @@ void	to_top_a(t_nb **lst, int idx)
 
 void algo(t_nb **lst_a, t_nb **lst_b)
 {
+	t_nb	*min;
 	push_all(lst_a, lst_b);
 	all_specs(lst_a, lst_b);
 	// print_stack(lst_a);
@@ -94,5 +92,14 @@ void algo(t_nb **lst_a, t_nb **lst_b)
 		all_specs(lst_a, lst_b);
 		to_top_a(lst_a, to_top_b(lst_b));
 		push(lst_b, lst_a, "pa\n");
+	}
+	min = ft_min_value(lst_a);
+	while ((*lst_a)->value != min->value)
+	{
+		if (min->rot == ROT)
+			rotate(lst_a, "ra\n");
+		else
+			r_rotate(lst_a, "rra\n");
+		index_list(lst_a);
 	}
 }

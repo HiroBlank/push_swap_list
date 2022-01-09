@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 13:14:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/07 16:30:44 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 19:26:48 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	index_link_list(t_nb **lst_a, t_nb **lst_b)
 		save = index_link_init(lst_a, tmp_b->value);
 		if (save)
 		{
-		tmp_a = *lst_a;
+			tmp_a = *lst_a;
 			while (tmp_a)
 			{
 				if (tmp_a->value > tmp_b->value)

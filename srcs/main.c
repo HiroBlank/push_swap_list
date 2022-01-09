@@ -6,25 +6,11 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 16:44:45 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/09 19:27:24 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
-	/*
-	push(&lst_a, &lst_b, "pb\n");
-	push(&lst_a, &lst_b, "pb\n");
-	push(&lst_a, &lst_b, "pb\n");
-	index_list(&lst_a);
-	index_list(&lst_b);
-	move_list(&lst_a);
-	move_list(&lst_b);
-	move_list_t(&lst_a, &lst_b);
-	index_link_list(&lst_a, &lst_b);
-	print_stack(&lst_a);//
-	print_stack(&lst_b);//
-	*/
-#include <libc.h>
 
 int		push_swap(int size, char **tab)
 {
@@ -36,15 +22,8 @@ int		push_swap(int size, char **tab)
 	if (!take_input(&lst_a, tab, size))
 		return (0);
 	all_specs(&lst_a, &lst_b);
-	// print_stack(&lst_a);
 	algo(&lst_a, &lst_b);
-	// print_stack(&lst_a);
-	// printf("\n\n\n\n");
-	// push(&lst_a, &lst_b, 0);
-	// push(&lst_a, &lst_b, 0);
-	// push(&lst_a, &lst_b, 0);
 	all_specs(&lst_a, &lst_b);
-	// print_stack(&lst_a);
 	del_list(&lst_a);
 	del_list(&lst_b);
 	return (1);
@@ -54,7 +33,7 @@ int		main(int ac, char **av)
 {
 	char	**tab;
 	
-	if (ac == 2)// split ou rien
+	if (ac == 2)
 	{
 		tab = ft_parse(av + 1);
 		if (!tab)
