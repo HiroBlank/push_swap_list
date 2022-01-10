@@ -6,35 +6,67 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:48:22 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 21:27:23 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/10 18:24:01 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int	ft_max(t_nb **lst)
+char	**sort_tab(char **tab)
 {
-	t_nb	*tmp;
-	int		max;
+	int		i;
+	int		j;
+	char	*swap;
 
-	tmp = *lst;
-	max = tmp->value;
-	tmp = tmp->next;
-	while (tmp)
+	i = 0;
+	j = i + 1;
+	while (tab[i] && tab[j])
 	{
-		if (tmp->value > max)
-			max = tmp->value;
-		tmp = tmp->next;
+		while (tab[j])
+		{
+			if (ft_atoi(tab[i]) > ft_atoi(tab[j]))
+			{
+				swap = tab[i];
+				tab[i] = tab[j];
+				tab[j] = swap;
+			}
+			j++;
+		}
+		i++;
+		j = i + 1;
 	}
-	return (max);
+	return (tab);
 }
 
-void	push_all(t_nb **lst_a, t_nb **lst_b)
+int	find_point(int size, t_nb **pile, int sign)
+{
+	int		i;
+	t_nb	*tmp;
+	char	**tab;
+	int		mid;
+
+	i = -1;
+	tab = malloc(sizeof(*tab) * (size + 1));
+	if (!tab)
+		return (0);
+	tmp = *pile;
+	while (tmp != NULL)
+	{
+		tab[++i] = ft_itoa(tmp->value);
+		tmp = tmp->next;
+	}
+	tab[++i] = NULL;
+	sort_tab(tab);
+	mid = ft_atoi(tab[size / sign]);
+	free_tab(tab);
+	return (mid);
+}
+
+void	push_all2(t_nb **lst_a, t_nb **lst_b)
 {
 	t_nb	*tmp_a;
 	int		max;
 
-	tmp_a = *lst_a;
 	max = ft_max(lst_a);
 	while (lst_size(lst_a) > 1)
 	{
@@ -46,38 +78,31 @@ void	push_all(t_nb **lst_a, t_nb **lst_b)
 	}
 }
 
-int	to_top_b(t_nb **lst)
+void	push_all(t_nb **lst_a, t_nb **lst_b)
 {
-	t_nb	*tmp;
+	t_nb	*tmp_a;
+	int		max;
+	int		med;
+	int		size;
 
-	tmp = ft_min_t(lst);
-	index_list(lst);
-	while ((*lst)->index != tmp->index)
+	size = lst_size(lst_a);
+	med = find_point(size, lst_a, 2);
+	tmp_a = *lst_a;
+	max = ft_max(lst_a);
+	while (lst_size(lst_a) > size / 2)
 	{
-		if (tmp->rot == ROT)
-			rotate(lst, "rb\n");
+		tmp_a = *lst_a;
+		if (tmp_a->value > med)
+			rotate(lst_a, "ra\n");
 		else
-			r_rotate(lst, "rrb\n");
-		index_list(lst);
+		{	
+			if (tmp_a->value == max)
+				rotate(lst_a, "ra\n");
+			else
+				push(lst_a, lst_b, "pb\n");
+		}
 	}
-	return (tmp->index_link);
-}
-
-void	to_top_a(t_nb **lst, int idx)
-{
-	t_nb	*tmp;
-
-	tmp = *lst;
-	while (tmp->index != idx)
-		tmp = tmp->next;
-	while ((*lst)->index != tmp->index)
-	{
-		if (tmp->rot == ROT)
-			rotate(lst, "ra\n");
-		else
-			r_rotate(lst, "rra\n");
-		index_list(lst);
-	}
+	push_all2(lst_a, lst_b);
 }
 
 void	algo(t_nb **lst_a, t_nb **lst_b)

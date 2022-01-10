@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 12:05:25 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 21:34:03 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/10 14:20:27 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@ void	swap(t_nb **lst, char *str)
 	t_nb	*tmp;
 	t_nb	*save;
 
-	tmp = *lst;
-	save = (*lst)->next;
-	if (lst_size(lst) > 2)
-	{
-		tmp->next = save->next;
-		save->next = tmp;
-		*lst = save;
-	}
+	tmp = (*lst)->next;
+	save = (*lst);
+	save->next = tmp->next;
+	tmp->next = save;
+	*lst = tmp;
 	if (str)
 		ft_putstr_fd(str, 1);
 }

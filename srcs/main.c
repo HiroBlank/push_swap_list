@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:20 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 21:28:34 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/10 14:10:58 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ int	push_swap(int size, char **tab)
 	lst_b = NULL;
 	if (!take_input(&lst_a, tab, size))
 		return (0);
-	all_specs(&lst_a, &lst_b);
-	algo(&lst_a, &lst_b);
-	all_specs(&lst_a, &lst_b);
+	if (size <= 10)
+		algo_10(&lst_a, &lst_b);
+	else if (!ft_sort(&lst_a) && !ft_sort_simple(&lst_a, size))
+	{
+		all_specs(&lst_a, &lst_b);
+		algo(&lst_a, &lst_b);
+		all_specs(&lst_a, &lst_b);
+	}
 	del_list(&lst_a);
 	del_list(&lst_b);
 	return (1);

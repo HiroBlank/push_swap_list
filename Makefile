@@ -3,7 +3,8 @@ NAME=push_swap
 CFLAGS=-Wall -Wextra -Werror
 SRC=algo.c check_input.c list.c \
 	main.c move.c spec_list.c \
-	utils_algo.c utils.c
+	utils_algo.c utils.c algo_10.c \
+	utils2_algo.c ft_itoa.c
 SRCS=$(addprefix srcs/, $(SRC))
 OBJS=$(SRC:.c=.o)
 LIB=libtf/libft.a
@@ -28,4 +29,4 @@ fclean: clean
 	rm -rf $(NAME)
 	make -C libft fclean
 
-re: all
+re: fclean all
