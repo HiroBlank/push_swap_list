@@ -6,7 +6,7 @@
 #    By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/22 11:55:14 by hkovac            #+#    #+#              #
-#    Updated: 2022/01/07 14:12:08 by hkovac           ###   ########.fr        #
+#    Updated: 2022/01/10 10:06:10 by hkovac           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,6 @@ OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS_SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
 .c.o: $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@

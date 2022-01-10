@@ -1,5 +1,6 @@
+CC=gcc
 NAME=push_swap
-CFLAGS=-Wall -Wextra -Werror -O0 -g3 -fsanitize=address
+CFLAGS=-Wall -Wextra -Werror
 SRC=algo.c check_input.c list.c \
 	main.c move.c spec_list.c \
 	utils_algo.c utils.c
@@ -12,14 +13,12 @@ INCLUDE=include/include.h
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIB)
-	gcc $(CFLAGS) -o $(NAME) $(OBJS) -L./libft -lft
+$(NAME): $(OBJS)
+	make -C libft
+	$(CC) $(OBJS) $(CFLAGS) -L./libft -lft -o $(NAME)
 
 $(OBJS): $(SRCS) $(INCLUDE)
-	gcc $(CFLAGS) -c -Iinclude $(SRCS)
-
-$(LIB):
-	make -C libft
+	$(CC) $(CFLAGS) -c -Iinclude $(SRCS)
 
 clean:
 	rm -rf $(OBJS)
@@ -27,6 +26,6 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	make -C ../libft fclean
+	make -C libft fclean
 
 re: all
