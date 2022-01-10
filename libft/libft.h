@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:52:48 by hkovac            #+#    #+#             */
-/*   Updated: 2021/12/23 09:58:41 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/10 11:23:12 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }t_list;
 
-int					ft_atoi(const char *str);
+long long			ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t n, size_t size);
 int					ft_isalnum(int c);

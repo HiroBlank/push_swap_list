@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:44:23 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 21:31:09 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/10 11:01:29 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void	swap(t_nb **lst, char *str);
 void	push(t_nb **lst1, t_nb **lst2, char *str);
 void	rotate(t_nb **lst, char *str);
 void	r_rotate(t_nb **lst, char *str);
-/*do_not_push.c*/
-void print_stack(t_nb **lst);
 /*spec_list.c*/
 void	index_list(t_nb **lst);
 void	index_link_list(t_nb **lst_a, t_nb **lst_b);

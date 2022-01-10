@@ -6,7 +6,7 @@
 /*   By: hkovac <hkovac@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:09:08 by hkovac            #+#    #+#             */
-/*   Updated: 2022/01/09 21:28:04 by hkovac           ###   ########.fr       */
+/*   Updated: 2022/01/10 11:22:14 by hkovac           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	check_double(t_nb **lst, int size)
 
 int	take_input(t_nb **lst, char **tab, int size)
 {
-	t_nb	*tmp;
-	int		content;
+	t_nb		*tmp;
+	long long	content;
 
 	tmp = *lst;
 	while (*tab)
